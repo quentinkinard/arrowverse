@@ -9,6 +9,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
+
 import "./MainPage.css";
 
 const MainPage = ({ show, cast }) => {
@@ -19,18 +20,23 @@ const MainPage = ({ show, cast }) => {
       {show && (
         <Grid container spacing={4}>
           <Grid item xs={7}>
-            <header>
-              <h1>{show.name}</h1>
-            </header>
+            <h1>{show.name}</h1>
             <div>
               <img src={show.image.medium} alt="" />
-              <div className="desp">Show Type: {show.type}</div>
-              <div className="desp">Start Date: {show.premiered}</div>
-              <div className="desp">Last Aired: {show.ended}</div>
+              <div className="desp">
+                <b>Show Type</b>: {show.type}
+              </div>
+              <div className="desp">
+                <b>Start Date</b>: {show.premiered}
+              </div>
+              <div className="desp">
+                <b>Last Aired</b>: {show.ended}
+              </div>
             </div>
           </Grid>
           <Grid item xs={5}>
             <div className="castMembersList">
+                <h3>Cast Members</h3>
               <List className="cml">
                 {cast.map((castMember) => (
                   <ListItem

@@ -5,50 +5,49 @@ import {
   Switch,
   Route,
   Link,
-  useHistory,
 } from "react-router-dom";
-import "./App.css";
 import MainPage from "./Components/MainPage/MainPage";
 import CastPage from "./Components/CastPage/CastPage";
 import AppBar from "@mui/material/AppBar";
 import { Typography } from "@mui/material";
 
+import "./App.css";
+
+
 function App() {
   const [show, setShow] = useState();
   const [cast, setCast] = useState();
-  const history = useHistory();
 
   useEffect(() => {
     axios
       .get("https://api.tvmaze.com/shows/4/cast")
       .then(function (response) {
         setCast(response.data);
-        console.log(response);
       })
       .catch(function (err) {
         console.error(err);
       });
   }, []);
-  console.log(cast);
 
   useEffect(() => {
     axios
       .get("https://api.tvmaze.com/shows/4")
       .then(function (response) {
         setShow(response.data);
-        console.log(show);
       })
       .catch(function (err) {
         console.error(err);
       });
-  }, [setShow]);
+  }, []);
 
   return (
     <Router>
       <div>
         <AppBar className="bar">
-          <Typography>
-            <Link to="/">Home</Link>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link className="insideBar" to="/">
+              Home
+            </Link>
           </Typography>
         </AppBar>
         <Switch>

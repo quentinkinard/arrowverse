@@ -53,3 +53,12 @@ body {
   height: 35px;
   margin-bottom: 150px;
 }
+
+.insideBar {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.insideBar:hover {
+  color: green;
+}
