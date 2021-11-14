@@ -7,6 +7,7 @@ import {
   ListItemAvatar,
   Avatar,
   Typography,
+  Grid,
 } from "@mui/material";
 import "./MainPage.css";
 
@@ -14,60 +15,58 @@ const MainPage = ({ show, cast }) => {
   const history = useHistory();
 
   return (
-    <div>
+    <div className="main">
       {show && (
-        <div>
-          {show.name}
-          {console.log(show)}
-          <div>
-            <img src={show.image.medium} alt="" />
-          </div>
-          <div>{show.type}</div>
-          <div>{show.premiered}</div>
-          <div>{show.ended}</div>
-          <div>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {cast.map((castMember) => (
-                <ListItem
-                  alignItems="flex-start"
-                  className="castMember"
-                  onClick={() => {
-                    history.push({
-                      pathname: "/cast",
-                      state: {
-                        castMember: castMember.person,
-                      },
-                    })
-                  }}
-                >
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={castMember.name}
-                      src={castMember.person.image.medium}
+        <Grid container spacing={4}>
+          <Grid item xs={7}>
+            <header>
+              <h1>{show.name}</h1>
+            </header>
+            <div>
+              <img src={show.image.medium} alt="" />
+              <div className="desp">Show Type: {show.type}</div>
+              <div className="desp">Start Date: {show.premiered}</div>
+              <div className="desp">Last Aired: {show.ended}</div>
+            </div>
+          </Grid>
+          <Grid item xs={5}>
+            <div className="castMembersList">
+              <List className="cml">
+                {cast.map((castMember) => (
+                  <ListItem
+                    alignItems="flex-start"
+                    className="castMember"
+                    onClick={() => {
+                      history.push({
+                        pathname: "/cast",
+                        state: {
+                          castMember: castMember.person,
+                        },
+                      });
+                    }}
+                  >
+                    <ListItemAvatar>
+                      <Avatar
+                        alt={castMember.name}
+                        src={castMember.person.image.medium}
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={castMember.person.name}
+                      secondary={
+                        <React.Fragment>
+                          <Typography className="typo">
+                            {castMember.character.name}
+                          </Typography>
+                        </React.Fragment>
+                      }
                     />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={castMember.person.name}
-                    secondary={
-                      <React.Fragment>
-                        <Typography
-                          sx={{ display: "inline" }}
-                          component="span"
-                          variant="body2"
-                          color="inherit"
-                        >
-                          {castMember.character.name}
-                        </Typography>
-                      </React.Fragment>
-                    }
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </div>
-        </div>
+                  </ListItem>
+                ))}
+              </List>
+            </div>
+          </Grid>
+        </Grid>
       )}
     </div>
   );

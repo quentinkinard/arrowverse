@@ -1,13 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 import "./App.css";
 import MainPage from "./Components/MainPage/MainPage";
 import CastPage from "./Components/CastPage/CastPage";
+import AppBar from "@mui/material/AppBar";
+import { Typography } from "@mui/material";
 
 function App() {
   const [show, setShow] = useState();
   const [cast, setCast] = useState();
+  const history = useHistory();
 
   useEffect(() => {
     axios
@@ -34,11 +43,14 @@ function App() {
       });
   }, [setShow]);
 
-
-
   return (
     <Router>
       <div>
+        <AppBar className="bar">
+          <Typography>
+            <Link to="/">Home</Link>
+          </Typography>
+        </AppBar>
         <Switch>
           <Route exact={true} path="/">
             <MainPage show={show} cast={cast} />

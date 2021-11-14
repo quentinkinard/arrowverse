@@ -1,5 +1,45 @@
+.main {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  padding-top: 75px;
+}
+
+header {
+  /* border: black 2px solid; */
+  background-color: rgb(3, 71, 3);
+}
+
+.desp {
+  display: block;
+}
+
+.castMember {
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 25px;
+}
+
 .castMember:hover {
-background-color: rgb(4, 100, 4);
-color: black;
-cursor: pointer;
+  background-color: rgb(4, 100, 4);
+  color: black;
+  cursor: pointer;
+}
+
+.cml {
+  width: 100%;
+  max-width: 360px;
+  height: 500px;
+  max-height: 500px;
+  overflow: scroll;
+  position: inherit;
+}
+
+.typo {
+    display: inline;
+    color: whitesmoke;
+}
+
+.castMember:hover .typo{
+    color: black;
 }
