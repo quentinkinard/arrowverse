@@ -19,7 +19,7 @@ const MainPage = ({ show, cast }) => {
     <div className="main">
       {show && (
         <Grid container spacing={4}>
-          <Grid item xs={7}>
+          <Grid item xs={7} style={{textAlign: 'center'}}>
             <h1>{show.name}</h1>
             <div>
               <img src={show.image.medium} alt="" />
@@ -31,6 +31,12 @@ const MainPage = ({ show, cast }) => {
               </div>
               <div className="desp">
                 <b>Last Aired</b>: {show.ended}
+              </div>
+              <div >
+                <h4>Show Summary</h4>
+                <p>
+                  {show.summary.replace(new RegExp('<[^>]*>', 'g'), '')}
+                </p>
               </div>
             </div>
           </Grid>

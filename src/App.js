@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 
 import "./App.css";
 import Gallery from "./Components/Gallery/Gallery";
+import Episodes from "./Components/Episodes/Episodes";
 
 function App() {
   const [show, setShow] = useState();
@@ -48,14 +49,20 @@ function App() {
             <Link className="insideBar" to="/gallery">
               Gallery
             </Link>
+            <Link className="insideBar" to="/episodes">
+              Episodes
+            </Link>
           </Typography>
         </AppBar>
         <Switch>
           <Route exact={true} path="/">
             <MainPage show={show} cast={cast} />
           </Route>
-          <Route>
+          <Route path="/gallery">
             <Gallery />
+          </Route>
+          <Route path="/episodes">
+            <Episodes />
           </Route>
           <Route exact path="/cast">
             <CastPage />

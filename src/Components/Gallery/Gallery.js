@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ImageList, ImageListItem } from "@mui/material";
 
+import "./Gallery.css";
+
 const Gallery = () => {
   const [images, setImages] = useState();
 
@@ -19,7 +21,7 @@ const Gallery = () => {
   return (
     <div>
       {images && (
-        <ImageList sx={{ width: "100%", height: "80%" }} cols={3}>
+        <ImageList sx={{ width: "100%", height: "80%", paddingTop: 5 }} cols={3}>
           {images.map((image) => {
             return image.resolutions.medium?.url ? (
               <ImageListItem key={images.id}>
@@ -33,7 +35,12 @@ const Gallery = () => {
           })}
         </ImageList>
       )}
-      {!images && <h2>No Gallery to Display</h2>}
+      {!images && (
+        <div className="noGallery">
+          {" "}
+          <h1>No Gallery to Display</h1>
+        </div>
+      )}
     </div>
   );
 };

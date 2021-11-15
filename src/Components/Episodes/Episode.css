@@ -1,0 +1,25 @@
+.episodesMain {
+  padding-top: 30px;
+  max-height: 450px;
+}
+
+.episodesList {
+  width: 100%;
+  height: 400px;
+  max-height: 400px;
+  overflow: scroll;
+  position: inherit;
+}
+
+.MuiDataGrid-menuIconButton,
+.MuiDataGrid-sortIcon,
+.MuiTablePagination-toolbar {
+  color: whitesmoke !important;
+}
+
+.dataGridMain {
+  height: 450px;
+  width: 100%;
+  color: whitesmoke;
+  padding-top: 30px;
+}
