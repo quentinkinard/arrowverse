@@ -57,6 +57,7 @@ body {
 .insideBar {
   color: whitesmoke;
   text-decoration: none;
+  padding-left: 15px;
 }
 
 .insideBar:hover {

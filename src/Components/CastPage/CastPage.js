@@ -2,9 +2,7 @@ import { useLocation } from "react-router";
 import { Button } from "@mui/material";
 import { Grid } from "@mui/material";
 import { CSVLink } from "react-csv";
-
 import "./CastPage.css";
-
 
 const headers = [
   {

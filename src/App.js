@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MainPage from "./Components/MainPage/MainPage";
 import CastPage from "./Components/CastPage/CastPage";
 import AppBar from "@mui/material/AppBar";
 import { Typography } from "@mui/material";
 
 import "./App.css";
-
+import Gallery from "./Components/Gallery/Gallery";
 
 function App() {
   const [show, setShow] = useState();
@@ -40,6 +35,8 @@ function App() {
       });
   }, []);
 
+  
+
   return (
     <Router>
       <div>
@@ -48,11 +45,17 @@ function App() {
             <Link className="insideBar" to="/">
               Home
             </Link>
+            <Link className="insideBar" to="/gallery">
+              Gallery
+            </Link>
           </Typography>
         </AppBar>
         <Switch>
           <Route exact={true} path="/">
             <MainPage show={show} cast={cast} />
+          </Route>
+          <Route>
+            <Gallery />
           </Route>
           <Route exact path="/cast">
             <CastPage />
