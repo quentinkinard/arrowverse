@@ -24,7 +24,7 @@ const Gallery = () => {
         <ImageList sx={{ width: "100%", height: "80%", paddingTop: 5 }} cols={3}>
           {images.map((image) => {
             return image.resolutions.medium?.url ? (
-              <ImageListItem key={images.id}>
+              <ImageListItem key={image.id}>
                 <img
                   src={image.resolutions.medium?.url}
                   alt="arrow show images"

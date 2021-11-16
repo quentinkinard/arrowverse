@@ -19,7 +19,7 @@ const MainPage = ({ show, cast }) => {
     <div className="main">
       {show && (
         <Grid container spacing={4}>
-          <Grid item xs={7} style={{textAlign: 'center'}}>
+          <Grid item xs={7} style={{ textAlign: "center" }}>
             <h1>{show.name}</h1>
             <div>
               <img src={show.image.medium} alt="" />
@@ -32,20 +32,19 @@ const MainPage = ({ show, cast }) => {
               <div className="desp">
                 <b>Last Aired</b>: {show.ended}
               </div>
-              <div >
+              <div>
                 <h4>Show Summary</h4>
-                <p>
-                  {show.summary.replace(new RegExp('<[^>]*>', 'g'), '')}
-                </p>
+                <p>{show.summary.replace(new RegExp("<[^>]*>", "g"), "")}</p>
               </div>
             </div>
           </Grid>
           <Grid item xs={5}>
             <div className="castMembersList">
-                <h3>Cast Members</h3>
+              <h3>Cast Members</h3>
               <List className="cml">
-                {cast.map((castMember) => (
+                {cast.map((castMember, idx) => (
                   <ListItem
+                    key={idx}
                     alignItems="flex-start"
                     className="castMember"
                     onClick={() => {
@@ -67,7 +66,7 @@ const MainPage = ({ show, cast }) => {
                       primary={castMember.person.name}
                       secondary={
                         <React.Fragment>
-                          <Typography className="typo">
+                          <Typography component="span" className="typo">
                             {castMember.character.name}
                           </Typography>
                         </React.Fragment>
