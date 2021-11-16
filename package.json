@@ -2,6 +2,8 @@
   "name": "arrowverse",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://swipertin.github.io/arrowverse/public",
+
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
@@ -19,7 +21,6 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "http://swipertin.github.io/arrowverse",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

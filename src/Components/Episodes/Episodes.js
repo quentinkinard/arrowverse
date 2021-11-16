@@ -30,6 +30,7 @@ const Episodes = () => {
       {episodes && (
         <div className="dataGridMain">
           <DataGrid
+            key={episodes.id}
             style={{ color: "whitesmoke" }}
             rows={episodes}
             columns={columns}
