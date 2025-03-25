@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://swipertin.github.io/arrowverse/public",
-
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
@@ -12,13 +11,13 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
+    "axios": "^1.8.4",
     "bootstrap": "^5.1.3",
     "react": "^17.0.2",
     "react-csv": "^2.0.3",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -48,6 +47,24 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^6.3.0"
+  },
+  "overrides": {
+    "svgo": {
+      "nth-check": ">=2.0.2"
+    },
+    "react-scripts": {
+      "postcss": ">=8.4.31",
+      "workbox-webpack-plugin": ">=7.1.0"
+    },
+    "workbox-build": {
+      "rollup": ">=3.29.5"
+    },
+    "@rollup/plugin-babel": {
+      "rollup": ">=3.29.5"
+    },
+    "@rollup/plugin-replace": {
+      "rollup": ">=3.29.5"
+    }
   }
 }
